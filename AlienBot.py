@@ -80,9 +80,12 @@ class AlienBot:
        
   # Define .cubed_intent():
   def cubed_intent(self, number):
-    number =int(number)
-    cubed_number = number*number*number
-    return f"The cube of {number} is {cubed_number}. Isn't that cool?"
+    try:
+        number = int(number)
+        cubed_number = number*number*number
+        return f"The cube of {number} is {cubed_number}. Isn't that cool?"
+    except ValueError:
+        return "I couldn't understand that number. Please provide a valid integer."
 
   # Define .no_match_intent():
   def no_match_intent(self):
